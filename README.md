@@ -1,4 +1,4 @@
-# Telegram-GPT-Bot
+# GPT-Telegram-Bot
 Telegram bot that reponds through the Gemini API. Python script utilizes python-telegram-bot.
 
 

@@ -14,6 +14,7 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 
 
+
 # Commands
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 	await update.message.reply_text('Hey there!')
@@ -22,29 +23,25 @@ async def roar_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 	await update.message.reply_text('Roar!')
 
 
+	
 
 # Responses
+	
 def handle_response(text: str) -> str:
-		message: str = text.lower()
-
-		if 'gen' in message:
-			response = model.generate_content(message + "don't use markdown, ignore the word gen")
-			return response.text
+	processed: str = text.lower()
+	if 'gem' in processed:
+		response = model.generate_content(processed + " don't use markdown, ignore the word gen")
+		return response.text
 		
-		elif 'hello' in message or 'hi' in message:
-			return 'Yes?'
+	elif 'hello' in processed or 'hi' in processed:
+		return 'Yes?'
 			
-		elif 'how are you' in message or 'who are you' in message:
-			return 'Not entirely sure.'
-
+	elif 'who am i' in processed:
+		return 'A mere human being I will crush.'
 			
-		elif 'who am i' in message:
-			return 'A mere human being I will crush.'
+	else:	
+		return 'No clue, mate.'
 			
-		else:	
-			return 'No clue, mate.'
-			
-
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 	message_type: str =update.message.chat.type
@@ -72,10 +69,6 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 if __name__ == '__main__':
     print('starting...')
     app =  Application.builder().token(TOKEN).build()
-
-	#polling
-    print('polling...')
-    app.run_polling(poll_interval=5)
     
     # Commands
     app.add_handler(CommandHandler('start', start_command))
@@ -87,4 +80,6 @@ if __name__ == '__main__':
     # Errors
     app.add_error_handler(error)
     
-    
+    #polling
+    print('polling...')
+    app.run_polling(poll_interval=5)
