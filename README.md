@@ -13,4 +13,4 @@ Telegram bot that reponds through the Gemini API. Python script utilizes python-
 # Usage
 1. Use the start command to start the bot and it should start working.
 2. To get a response in supergroups, either tag its username directly or use the word 'mirror' in your message.
-3. To make it respond using Gemini, use the word 'gen' in your message. The requirement of 'gen' has been made so that someone does not accidently misuse their API key and incur charges.
+3. To make it respond using Gemini, use the word 'gen' in your message. The requirement of 'gen' has been made so that someone does not accidently misuse their API key and incur charges.  
