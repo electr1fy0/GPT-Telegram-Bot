@@ -26,11 +26,10 @@ async def roar_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 	
 
 # Responses
-	
 def handle_response(text: str) -> str:
 	processed: str = text.lower()
-	if 'gem' in processed:
-		response = model.generate_content(processed + " don't use markdown, ignore the word gen")
+	if 'gen' in processed:
+		response = model.generate_content(processed + " (don't use markdown, ignore the word gen)")
 		return response.text
 		
 	elif 'hello' in processed or 'hi' in processed:
@@ -65,7 +64,7 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f'Update {update} caused error {context.error}')
     
 
-# calling
+# Calling
 if __name__ == '__main__':
     print('starting...')
     app =  Application.builder().token(TOKEN).build()
