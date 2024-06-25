@@ -1,6 +1,7 @@
 # GPT-Telegram-Bot
 Telegram bot that reponds through the Gemini API. Python script utilizes python-telegram-bot.
 
+<img src="https://github.com/electr1fy0/GPT-Telegram-Bot/assets/87616300/29cbb0d7-6296-4dc2-aae2-51d7656aaa99" width="640">
 
 
 # Setup
